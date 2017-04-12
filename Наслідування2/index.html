@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    var Baby = function (name, age) {
+        this.name = name;
+        this.age = age;
+        this.speak = function () {
+            alert('bu ba bu' + ' ' + name + ' ' + age)
+        }
+    };
+
+    var Teenager = function (name, age, brother) {
+        Baby.apply(this, arguments);
+        this.brother = brother;
+    };
+
+    var vas = new Baby('Vasya', 2);
+    var mj = new Teenager('Marjaha', 4, vas);
+
+    mj.speak();
+    mj.brother.speak();
+
+
+
+</script>
+</body>
+</html>
